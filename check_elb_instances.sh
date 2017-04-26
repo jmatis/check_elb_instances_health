@@ -45,7 +45,7 @@ if [[ -z ${LB_NAME} ]]; then
 fi
 
 
-CMD="/usr/bin/aws $CMDOPT elb describe-instance-health"
+CMD="/usr/bin/aws --output json $CMDOPT elb describe-instance-health"
 OPT="$OPT --load-balancer-name ${LB_NAME}"
 
 JSON=$(${CMD} ${OPT})
